@@ -21,15 +21,15 @@ app.get('/webhook',(req,res) => {
      console.log(mytoken);
     if(mode && token){
         if(mode === "subscribe" && token === mytoken){
-            res.status("200").send(challenge);
+            res.status(200).send(challenge);
         }else{
-            res.status("404");
+            res.status(404);
         }
     }
 
 });
 
-app.post('/wbhook',(req,res) => {
+app.post('/webhook',(req,res) => {
     let body_param = req.body;
 
     console.log(JSON.stringify(body_param,null,true));
@@ -60,13 +60,13 @@ app.post('/wbhook',(req,res) => {
                   });
                 res.status(200).send(challenge);
             }else{
-                res.status("404");
+                res.status(404);
             }
     }
 });
 
 app.get('/',(req,res) => {
     
-        res.status("200").send("Hoi Finally");
+        res.status(200).send("Hoi Finally");
 
 });
